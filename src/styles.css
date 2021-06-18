@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.button {
+  color: white;
+  background-color: black;
+  font-size: 24px;
+  border-radius: 12px;
+  padding: 8px;
+}
