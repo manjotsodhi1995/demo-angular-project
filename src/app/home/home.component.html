@@ -24,14 +24,16 @@
 <!-- <button class="button" (click)="gotodemo()">Go to Demo</button>
 
 <button class="button" (click)="changetext()">disapper profile button</button> -->
-<!--
+
+<!-- Using the ngswitchcase Directive -->
 <div [ngSwitch]="color">
   <p *ngSwitchCase="'red'" style="color: red;">red</p>
   <p *ngSwitchCase="'blue'" style="color: blue;">blue</p>
   <p *ngSwitchCase="'green'" style="color: green;">green</p>
-</div> -->
+</div>
 
-<!-- <div class="container">
+<!-- Using the ngclass directive -->
+<div class="container">
   <div
     *ngFor="let car of cars"
     [ngClass]="{
@@ -41,8 +43,9 @@
   >
     {{ car.name }}
   </div>
-</div> -->
+</div>
 
+<!-- using the ngstyle directive  -->
 <div>
   <p [ngStyle]="{ backgroundColor: getColor(status1), color: 'white' }">
     we are {{ status1 }}
