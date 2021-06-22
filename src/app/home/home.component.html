@@ -3,11 +3,24 @@
 <p *ngIf="showTitle">{{ title }}</p>
 
 <ul>
-  <li *ngFor="let item of array">{{ item }}</li>
+  <li *ngFor="let item of array" [ngClass]="{ hello: item % 2 === 0 }">
+    {{ item }}
+  </li>
 </ul>
-
+<!-- // a =>  {
+  name: "john",
+  status: "online"
+}, -->
 <ol>
-  <li *ngFor="let a of array2">{{ a }}</li>
+  <li
+    *ngFor="let a of user"
+    [ngClass]="{
+      online: a.status === 'online',
+      offline: a.status === 'offline'
+    }"
+  >
+    {{ a.name }}
+  </li>
 </ol>
 
 <button *ngIf="showProfile" class="button" (click)="gotoprofile()">
@@ -32,7 +45,7 @@
   <p *ngSwitchCase="'green'" style="color: green;">green</p>
 </div>
 
-<!-- Using the ngclass directive -->
+Using the ngclass directive
 <div class="container">
   <div
     *ngFor="let car of cars"
@@ -44,15 +57,24 @@
     {{ car.name }}
   </div>
 </div>
+<div
+  *ngFor="let item of array"
+  [ngClass]="{
+    red: item % 3 === 0,
+    blue: item % 3 !== 0
+  }"
+>
+  {{ item }}
+</div>
+<div></div>
 
 <!-- using the ngstyle directive  -->
 <div>
-  <p [ngStyle]="{ backgroundColor: getColor(status1), color: 'white' }">
-    we are {{ status1 }}
-  </p>
+  <p [ngStyle]="{ color: sample(status2) }">we are {{ status1 }}</p>
 </div>
 <div>
-  <p [ngStyle]="{ backgroundColor: getColor(status2), color: 'white' }">
-    we are {{ status2 }}
-  </p>
+  <p [ngStyle]="{ color: sample(status1) }">we are {{ status2 }}</p>
 </div>
+
+<br />
+<br />

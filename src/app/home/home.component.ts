@@ -12,22 +12,45 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
   title = "my-first-angular-application";
   heading = "Hyse Academy";
-  array = [1, 2, 3, 4, 5, 6, 7];
+  array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   array2 = [" good morning ", "good evening ", "good night"];
-  showProfile = false;
-  showTitle = false;
+  showProfile = true;
+  showTitle = true;
   color = "red";
   status1 = "Offline";
   status2 = "Online";
-
-  cars = [
+  user = [
     {
-      name: "Mg hector",
-      color: "blue"
+      name: "john",
+      status: "online"
     },
     {
-      name: "Ford",
-      color: "red"
+      name: "ram",
+      status: "offline"
+    },
+    {
+      name: "john",
+      status: "online"
+    },
+    {
+      name: "sham",
+      status: "online"
+    },
+    {
+      name: "shareef",
+      status: "offline"
+    },
+    {
+      name: "parveen",
+      status: "offline"
+    }
+  ];
+  cars = [
+    {
+      name: "Mg hector"
+    },
+    {
+      name: "Ford"
     }
   ];
 
@@ -45,7 +68,7 @@ export class HomeComponent implements OnInit {
   changetext() {
     this.showProfile = !this.showProfile;
   }
-  getColor(status) {
+  sample(status) {
     return status === "Online" ? "green" : "red";
   }
 }

@@ -30,3 +30,19 @@ p {
 .blue:hover {
   background-color: lightgray;
 }
+
+.hello {
+  background-color: aquamarine;
+}
+
+.online {
+  background-color: green;
+  text-align: center;
+  color: white;
+}
+
+.offline {
+  background-color: red;
+  text-align: center;
+  color: white;
+}
