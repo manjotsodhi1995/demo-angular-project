@@ -12,7 +12,24 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
   title = "my-first-angular-application";
   heading = "Hyse Academy";
-  array = [1, 2, 3, 4];
+  array = [1, 2, 3, 4, 5, 6, 7];
+  array2 = [" good morning ", "good evening ", "good night"];
+  showProfile = false;
+  showTitle = false;
+  color = "red";
+  status1 = "Offline";
+  status2 = "Online";
+
+  cars = [
+    {
+      name: "Mg hector",
+      color: "blue"
+    },
+    {
+      name: "Ford",
+      color: "red"
+    }
+  ];
 
   hello() {
     alert(this.title);
@@ -23,5 +40,12 @@ export class HomeComponent implements OnInit {
 
   gotodemo() {
     this.router.navigate(["/demo"]);
+  }
+
+  changetext() {
+    this.showProfile = !this.showProfile;
+  }
+  getColor(status) {
+    return status === "Online" ? "green" : "red";
   }
 }

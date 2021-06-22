@@ -1,0 +1,9 @@
+p {
+  position: fixed;
+  bottom: 0;
+  background-color: black;
+  color: gray;
+  width: 100%;
+  text-align: center;
+  height: 24px;
+}

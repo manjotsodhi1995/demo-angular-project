@@ -1,0 +1,32 @@
+.button:hover {
+  background-color: gray;
+}
+
+p {
+  margin: 24px;
+  font-size: 32px;
+}
+
+.red {
+  background-color: teal;
+  color: red;
+  padding: 24px;
+  font-size: 42px;
+  text-align: center;
+}
+
+.red:hover {
+  background-color: thistle;
+}
+
+.blue {
+  background-color: white;
+  color: blue;
+  padding: 24px;
+  font-size: 42px;
+  text-align: center;
+}
+
+.blue:hover {
+  background-color: lightgray;
+}

@@ -1,19 +1,55 @@
-<h2 style="color:red;text-align:center">Wecome to {{ heading }}</h2>
+<p class="p1" id="p1">This is the first class for angular</p>
 
-<p class="p1">This is the first class for angular</p>
-
-<p>{{ title }}</p>
+<p *ngIf="showTitle">{{ title }}</p>
 
 <ul>
-  <li>{{ array[0] }}</li>
-  <li>{{ array[1] }}</li>
-  <li>{{ array[2] }}</li>
-  <li>{{ array[3] }}</li>
+  <li *ngFor="let item of array">{{ item }}</li>
 </ul>
 
-<button class="button" (click)="gotoprofile()">
+<ol>
+  <li *ngFor="let a of array2">{{ a }}</li>
+</ol>
+
+<button *ngIf="showProfile" class="button" (click)="gotoprofile()">
   Go to Profile
 </button>
 <br />
 <br />
-<button class="button" (click)="gotodemo()">Go to Demo</button>
+
+<!-- <div>
+  <p *ngFor="let item of array2">
+    {{ item }}
+  </p>
+</div> -->
+<!-- <button class="button" (click)="gotodemo()">Go to Demo</button>
+
+<button class="button" (click)="changetext()">disapper profile button</button> -->
+<!--
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'red'" style="color: red;">red</p>
+  <p *ngSwitchCase="'blue'" style="color: blue;">blue</p>
+  <p *ngSwitchCase="'green'" style="color: green;">green</p>
+</div> -->
+
+<!-- <div class="container">
+  <div
+    *ngFor="let car of cars"
+    [ngClass]="{
+      red: car.name === 'Mg hector',
+      blue: car.name === 'Ford'
+    }"
+  >
+    {{ car.name }}
+  </div>
+</div> -->
+
+<div>
+  <p [ngStyle]="{ backgroundColor: getColor(status1), color: 'white' }">
+    we are {{ status1 }}
+  </p>
+</div>
+<div>
+  <p [ngStyle]="{ backgroundColor: getColor(status2), color: 'white' }">
+    we are {{ status2 }}
+  </p>
+</div>
