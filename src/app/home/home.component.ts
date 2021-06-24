@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
   color = "red";
   status1 = "Offline";
   status2 = "Online";
+  employee = {
+    name: "John Doe",
+    email: "john@gmail.com"
+  };
   user = [
     {
       name: "john",
@@ -70,5 +74,11 @@ export class HomeComponent implements OnInit {
   }
   sample(status) {
     return status === "Online" ? "green" : "red";
+  }
+  ondiv() {
+    console.log("div is called");
+  }
+  onsave(event) {
+    console.log("button is clicked", event);
   }
 }

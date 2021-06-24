@@ -11,6 +11,14 @@
   name: "john",
   status: "online"
 }, -->
+
+<input [value]="employee.email" type="text" />
+<p
+  style="background-color: aqua;color: black;text-align: center;border-radius: 24px;"
+>
+  Name : {{ employee.name }} <br />
+  Email : {{ employee.email }}
+</p>
 <ol>
   <li
     *ngFor="let a of user"
@@ -28,7 +36,11 @@
 </button>
 <br />
 <br />
-
+<div (click)="ondiv()">
+  <button (click)="onsave($event)">
+    event bubbling
+  </button>
+</div>
 <!-- <div>
   <p *ngFor="let item of array2">
     {{ item }}
