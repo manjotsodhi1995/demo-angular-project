@@ -4,6 +4,23 @@
   <div>
     <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
       <div>
+        <label>First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          [(ngModel)]="model.firstName"
+          #firstName="ngModel"
+          required
+        />
+
+        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+          <div *ngIf="firstName.errors.required">
+            FirstName Name is required
+          </div>
+        </div>
+      </div>
+      <br />
+      <div>
         <label>Last Name</label>
         <input
           type="text"
@@ -16,6 +33,8 @@
           <div *ngIf="lastName.errors.required">Last Name is required</div>
         </div>
       </div>
+      <br />
+      <br />
       <div>
         <button>Register</button>
         <button type="reset">Cancel</button>
@@ -23,3 +42,8 @@
     </form>
   </div>
 </div>
+
+<!-- <input type="text" [formControl]="color" />
+<br />
+<br />
+<p style="color: red;font-size: 20px;">{{ color.value }}</p> -->

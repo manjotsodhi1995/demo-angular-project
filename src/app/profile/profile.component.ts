@@ -12,7 +12,9 @@ export class ProfileComponent implements OnInit {
   title = "hyse academy";
   secondnumber: Number = 4;
   firstnumber: Number = 5;
+  lastname = "academy";
   model: any = {};
+
   color = new FormControl("hello", [Validators.required]);
 
   hello() {
