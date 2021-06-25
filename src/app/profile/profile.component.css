@@ -1,0 +1,11 @@
+.para {
+  font-size: 40px;
+  color: red;
+  text-align: center;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+  margin: 12px;
+}

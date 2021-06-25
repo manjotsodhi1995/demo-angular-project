@@ -1,30 +1,25 @@
-<p>this is the profile page !</p>
-
-<h2>Two way data binding</h2>
-<!-- Enter First Name
-<input [(ngModel)]="firstname" type="text" />
-<br />
-<br />
-Enter Last Name
-<input [(ngModel)]="lastname" type="text" />
-
-<p>
-  Firstname is <b>{{ firstname }}</b>
-  <br />
-  Lastname is <b>{{ lastname }}</b>
-</p> -->
-Enter first number
-<input [(ngModel)]="firstnumber" type="number" />
-<br />
-<br />
-Enter Last number
-<input [(ngModel)]="secondnumber" type="number" />
-Total = {{ firstnumber + secondnumber }}
-
-<br />
-<br />
-<input [formControl]="favColor" type="text" />
-<br />
-Fav Color is {{ favColor.value }}
-
-<button (click)="hello()">get the value</button>
+<!-- main app container -->
+<div>
+  <h5>Angular 8 Template-Driven Form Validation</h5>
+  <div>
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+      <div>
+        <label>Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          [(ngModel)]="model.lastName"
+          #lastName="ngModel"
+          required
+        />
+        <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+          <div *ngIf="lastName.errors.required">Last Name is required</div>
+        </div>
+      </div>
+      <div>
+        <button>Register</button>
+        <button type="reset">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

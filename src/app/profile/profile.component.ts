@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { FormControl, Validators } from "@angular/forms";
 @Component({
   selector: "app-profile",
   templateUrl: "./profile.component.html",
@@ -9,13 +9,16 @@ export class ProfileComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
+  title = "hyse academy";
   secondnumber: Number = 4;
   firstnumber: Number = 5;
-
-  favColor = new FormControl("blue");
+  model: any = {};
+  color = new FormControl("hello", [Validators.required]);
 
   hello() {
-    alert(this.favColor.value);
+    this.color.setValue("blue");
+  }
+  onSubmit() {
+    alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.model));
   }
 }
