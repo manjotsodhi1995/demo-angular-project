@@ -15,7 +15,7 @@
 
         <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
           <div *ngIf="firstName.errors.required">
-            FirstName Name is required
+            FirstName is required
           </div>
         </div>
       </div>
@@ -47,3 +47,7 @@
 <br />
 <br />
 <p style="color: red;font-size: 20px;">{{ color.value }}</p> -->
+
+<ul>
+  <li *ngFor="let item of data">{{ item }}</li>
+</ul>
