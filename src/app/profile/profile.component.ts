@@ -1,48 +1,49 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { ObjectUnsubscribedError, Observable, of, Observer } from "rxjs";
+import { HeroService } from "../hero.service";
 @Component({
   selector: "app-profile",
   templateUrl: "./profile.component.html",
   styleUrls: ["./profile.component.css"]
 })
 export class ProfileComponent implements OnInit {
-  constructor() {}
+  constructor(private service: HeroService) {}
   data = [];
   ngOnInit() {
     // Create a new Observable that will deliver the above sequence
-    const sequence = new Observable(this.sequenceSubscriber);
-
-    sequence.subscribe({
-      next(num) {
-        console.log(num);
-      },
-      complete() {
-        console.log("Finished sequence");
-      }
-    });
-
-    const data = of(1, 2, 3, 4);
-
-    const observer = {
-      next: x => {
-        console.log("number is ", x);
-      },
-      error: err => {
-        console.log("error is ", err);
-      },
-      complete: () => {
-        console.log("its complete");
-      }
-    };
-
-    data.subscribe(observer);
+    // const sequence = new Observable(this.sequenceSubscriber);
+    // sequence.subscribe({
+    //   next(num) {
+    //     console.log(num);
+    //   },
+    //   complete() {
+    //     console.log("Finished sequence");
+    //   }
+    // });
+    // const data = of(1, 2, 3, 4);
+    // const observer = {
+    //   next: x => {
+    //     console.log("number is ", x);
+    //   },
+    //   error: err => {
+    //     console.log("error is ", err);
+    //   },
+    //   complete: () => {
+    //     console.log("its complete");
+    //   }
+    // };
+    // data.subscribe(observer);
+    this.getAlbums();
   }
   title = "hyse academy";
   secondnumber: Number = 4;
+  birthday = new Date();
   firstnumber: Number = 5;
   lastname = "academy";
   model: any = {};
+
+  albumData;
 
   color = new FormControl("hello", [Validators.required]);
 
@@ -79,5 +80,12 @@ export class ProfileComponent implements OnInit {
         clearTimeout(timeoutId);
       }
     };
+  }
+
+  getAlbums() {
+    this.service.getAlbums(2).subscribe(res => {
+      console.log(res);
+      this.albumData = res;
+    });
   }
 }

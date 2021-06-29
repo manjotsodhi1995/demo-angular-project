@@ -47,7 +47,12 @@
 <br />
 <br />
 <p style="color: red;font-size: 20px;">{{ color.value }}</p> -->
+<p>{{ title | uppercase }}</p>
+<p>{{ birthday | date: "dd/mm/yyyy" }}</p>
+<p>Sqaure root of 100 :{{ 100 | sqrt }}</p>
 
-<ul>
-  <li *ngFor="let item of data">{{ item }}</li>
-</ul>
+<h1>Album data</h1>
+<!-- <div *ngFor="let item of albumData"> -->
+<h2>{{ albumData.title }}</h2>
+<p>{{ albumData.body }}</p>
+<!-- </div>s -->
