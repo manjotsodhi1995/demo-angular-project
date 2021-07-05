@@ -11,6 +11,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { SqrtPipe } from "./sqrt.pipe";
 import { HttpClientModule } from "@angular/common/http";
+import { SquarePipe } from './square.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from "@angular/common/http";
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
-    SqrtPipe
+    SqrtPipe,
+    SquarePipe
   ],
   imports: [
     BrowserModule,

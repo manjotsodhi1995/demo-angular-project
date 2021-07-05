@@ -7,7 +7,10 @@ import { HttpClient } from "@angular/common/http";
 export class HeroService {
   constructor(private http: HttpClient) {}
 
-  getAlbums(id) {
+  getAlbumsbyid(id) {
     return this.http.get("https://jsonplaceholder.typicode.com/posts/" + id);
+  }
+  getAlbums() {
+    return this.http.get("https://jsonplaceholder.typicode.com/posts");
   }
 }

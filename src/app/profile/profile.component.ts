@@ -10,17 +10,18 @@ import { HeroService } from "../hero.service";
 export class ProfileComponent implements OnInit {
   constructor(private service: HeroService) {}
   data = [];
+  sequence;
   ngOnInit() {
     // Create a new Observable that will deliver the above sequence
-    // const sequence = new Observable(this.sequenceSubscriber);
-    // sequence.subscribe({
-    //   next(num) {
-    //     console.log(num);
-    //   },
-    //   complete() {
-    //     console.log("Finished sequence");
-    //   }
-    // });
+    this.sequence = new Observable(this.sequenceSubscriber);
+    this.sequence.subscribe({
+      next(num) {
+        console.log(num);
+      },
+      complete() {
+        console.log("Finished sequence");
+      }
+    });
     // const data = of(1, 2, 3, 4);
     // const observer = {
     //   next: x => {
@@ -34,7 +35,12 @@ export class ProfileComponent implements OnInit {
     //   }
     // };
     // data.subscribe(observer);
-    this.getAlbums();
+    // this.getAlbums();
+    this.getPost();
+  }
+
+  ngOnDestroy() {
+    this.sequence.unsubscribe();
   }
   title = "hyse academy";
   secondnumber: Number = 4;
@@ -44,7 +50,7 @@ export class ProfileComponent implements OnInit {
   model: any = {};
 
   albumData;
-
+  post;
   color = new FormControl("hello", [Validators.required]);
 
   hello() {
@@ -83,9 +89,15 @@ export class ProfileComponent implements OnInit {
   }
 
   getAlbums() {
-    this.service.getAlbums(2).subscribe(res => {
+    this.service.getAlbums().subscribe(res => {
       console.log(res);
       this.albumData = res;
+    });
+  }
+  getPost() {
+    this.service.getAlbumsbyid(1).subscribe(res => {
+      console.log(res);
+      this.post = res;
     });
   }
 }
