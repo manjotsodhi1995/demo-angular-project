@@ -9,5 +9,5 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  heading = "Hyse Academy 2021";
+  heading = "Students ";
 }

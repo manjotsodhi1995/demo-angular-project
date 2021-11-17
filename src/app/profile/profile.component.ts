@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
     //   }
     // };
     // data.subscribe(observer);
-    // this.getAlbums();
+    this.getAlbums();
     this.getPost();
   }
 
